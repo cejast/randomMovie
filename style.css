@@ -1,0 +1,3 @@
+#container{ width: 900px; margin-left: auto; margin-right: auto;}
+#left{width:200px; float:left;}
+#right{width:500px; float:right; padding-top: 50px;}

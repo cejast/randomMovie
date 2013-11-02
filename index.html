@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="randomMovie">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+		<script src="app/app.js"></script>
+		<script src="app/controller.js"></script>
+		<script src="app/service.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="container" ng-controller="Test" ng-init="initialize()">
+
+		<div id="left">
+			<ul ng-repeat="genre in genres">
+				<li ng-click="moveGenre(genre.id, genre.genre)">{{genre.genre}} -- {{genre.id}}</li>
+			</ul>
+		</div>
+		<div id="right">
+			<ul ng-repeat="genre in selectedGenres">
+				<li ng-click="moveGenre(genre.id, genre.genre)">{{genre.genre}}</li>
+			</ul>
+			{{selectedGenres}}</br>
+			{{getMovie}}</br>
+
+			<input type="button" ng-click="randomGenre()" value="random genre">
+			{{random}} genre
+
+			<div id="movieResult">
+			{{movieResult.original_title}} </br>
+			{{movieResult.overview}}
+			</div>
+
+		</div>
+
+		</div>
+
+	</body>
+</html>
