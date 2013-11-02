@@ -1,38 +1,39 @@
 <!doctype html>
 <html ng-app="randomMovie">
 	<head>
+		<!--scripts-->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 		<script src="app/app.js"></script>
 		<script src="app/controller.js"></script>
 		<script src="app/service.js"></script>
-		<link rel="stylesheet" href="style.css">
+		<script src="app/directive.js"></script>
+		<!--styles-->
+		<link href="render/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="render/css/flat-ui.css" rel="stylesheet">
+		<link href="render/css/style.css" rel="stylesheet">
 	</head>
-	<body>
-		<div id="container" ng-controller="Test" ng-init="initialize()">
+	<body ng-controller="RandomMovie" ng-init="initialize()" ng-style="getBackground(5);">
+		<div></div>
+		<div class="container">
+			<div class="row">
+				<div class="control col-md-5">
+					<span ng-repeat="genre in genres">
+						<p class="genreSelect btn btn-primary" ng-click="moveGenre(genre.id, genre.genre)">{{genre.genre}}</p>
+					</span>
+				</div>
+				<div class="result col-md-7">
+					<span ng-repeat="genre in selectedGenres">
+						<p class = "selectedGenre btn btn-info" ng-click="moveGenre(genre.id, genre.genre)">{{genre.genre}}</p>
+					</span>
 
-		<div id="left">
-			<ul ng-repeat="genre in genres">
-				<li ng-click="moveGenre(genre.id, genre.genre)">{{genre.genre}} -- {{genre.id}}</li>
-			</ul>
-		</div>
-		<div id="right">
-			<ul ng-repeat="genre in selectedGenres">
-				<li ng-click="moveGenre(genre.id, genre.genre)">{{genre.genre}}</li>
-			</ul>
-			{{selectedGenres}}</br>
-			{{getMovie}}</br>
+					<input class="btn btn-primary" ng-click="randomGenre()" value="Go">
 
-			<input type="button" ng-click="randomGenre()" value="random genre">
-			{{random}} genre
-
-			<div id="movieResult">
-			{{movieResult.original_title}} </br>
-			{{movieResult.overview}}
+					<div class="movieResult">
+					<h3>{{movieResult.original_title}}</h3></br>
+					{{movieResult.overview}}
+					</div>
+				</div>
 			</div>
-
 		</div>
-
-		</div>
-
 	</body>
 </html>
