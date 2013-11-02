@@ -27,6 +27,7 @@ randomMovieController.controller('RandomMovie', function($scope, $http, service)
 	$scope.selectedGenres = []; //user selected genres
 	$scope.random = 0; //random genre selected from selectedGenres[]
 	$scope.movieResult = {"adult":false,"backdrop_path":"/jjAq3tCezdlQduusgtMhpY2XzW0.jpg","belongs_to_collection":{"id":121938,"name":"The Hobbit Collection","poster_path":"/4MyjzLpdX6H0Voj7H2kIgNgowli.jpg","backdrop_path":"/7wO7MSnP5UcwR2cTHdJFF1vP4Ie.jpg"},"budget":250000000,"genres":[{"id":28,"name":"Action"},{"id":12,"name":"Adventure"},{"id":14,"name":"Fantasy"}],"homepage":"http://www.thehobbit.com/","id":49051,"imdb_id":"tt0903624","original_title":"The Hobbit: An Unexpected Journey","overview":"Bilbo Baggins, a hobbit enjoying his quiet life, is swept into an epic quest by Gandalf the Grey and thirteen dwarves who seek to reclaim their mountain home from Smaug, the dragon.","popularity":35.0927029899782,"poster_path":"/nGLrjWHsFcz62Xw6Epz84j5faWZ.jpg","production_companies":[{"name":"Warner Bros. Pictures","id":174},{"name":"Metro-Goldwyn-Mayer Pictures","id":6127}],"production_countries":[{"iso_3166_1":"US","name":"United States of America"},{"iso_3166_1":"NZ","name":"New Zealand"}],"release_date":"2012-12-12","revenue":1017003568,"runtime":169,"spoken_languages":[{"iso_639_1":"en","name":"English"}],"status":"Released","tagline":"From the smallest beginnings come the greatest legends.","title":"The Hobbit: An Unexpected Journey","vote_average":6.5,"vote_count":3867};
+	$scope.date = $scope.movieResult.release_date.split("-", 1);
 
 	// $scope.possibleResults = function(){
 	// 	var result = 0;
@@ -107,7 +108,6 @@ randomMovieController.controller('RandomMovie', function($scope, $http, service)
     	return { 'background-image' : 'url(' + $scope.background + ')',
     			 'background-size' : 'cover',
   				 'background-repeat' : 'no-repeat',
-  				 'background-position' : 'center center'
   			   };
 		}
 
