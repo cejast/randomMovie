@@ -49,7 +49,7 @@ module.factory('apiCall', ['$http', 'api', 'genres', 'movieInfo', function($http
 	http.getMovie = function(id, page, item){
 		return 	$http({method: 'GET', url: api.url + 'genre/' + id + '/movies?api_key=' + api.key + '&page=' + page})
 		.then(function(response){
-			$http({method:'GET', url: api.url + 'movie/' + response.data.results[item].id + '?api_key=' + api.key})
+			$http({method:'GET', url: api.url + 'movie/' + response.data.results[item].id + '?api_key=' + api.key + '&append_to_response=trailers'})
 			.then(function(response){
 				return movieInfo.update(response.data);
 			})
@@ -128,11 +128,15 @@ module.service('genres', function(){
 });
 
 module.factory('movieInfo', [ '$rootScope', function($rootScope){
-	var movie = { data: {"adult":false,"backdrop_path":"/jjAq3tCezdlQduusgtMhpY2XzW0.jpg","belongs_to_collection":{"id":121938,"name":"The Hobbit Collection","poster_path":"/4MyjzLpdX6H0Voj7H2kIgNgowli.jpg","backdrop_path":"/7wO7MSnP5UcwR2cTHdJFF1vP4Ie.jpg"},"budget":250000000,"genres":[{"id":28,"name":"Action"},{"id":12,"name":"Adventure"},{"id":14,"name":"Fantasy"}],"homepage":"http://www.thehobbit.com/","id":49051,"imdb_id":"tt0903624","original_title":"The Hobbit: An Unexpected Journey","overview":"Bilbo Baggins, a hobbit enjoying his quiet life, is swept into an epic quest by Gandalf the Grey and thirteen dwarves who seek to reclaim their mountain home from Smaug, the dragon.","popularity":35.0927029899782,"poster_path":"/nGLrjWHsFcz62Xw6Epz84j5faWZ.jpg","production_companies":[{"name":"Warner Bros. Pictures","id":174},{"name":"Metro-Goldwyn-Mayer Pictures","id":6127}],"production_countries":[{"iso_3166_1":"US","name":"United States of America"},{"iso_3166_1":"NZ","name":"New Zealand"}],"release_date":"2012-12-12","revenue":1017003568,"runtime":169,"spoken_languages":[{"iso_639_1":"en","name":"English"}],"status":"Released","tagline":"From the smallest beginnings come the greatest legends.","title":"The Hobbit: An Unexpected Journey","vote_average":6.5,"vote_count":3867},
+	var movie = { data: {"adult":false,"backdrop_path":"/qbwVJPmEZS4c4t4Xgn0ZNqSDFzc.jpg","belongs_to_collection":null,"budget":10000000,"genres":[{"id":28,"name":"Action"},{"id":878,"name":"Science Fiction"},{"id":53,"name":"Thriller"},{"id":10769,"name":"Foreign"}],"homepage":"","id":71254,"imdb_id":"tt1117581","original_title":"Arena","overview":"David Lord finds himself forced into the savage world of a modern gladiatorial arena, where men fight to the death for the entertainment of the online masses.","popularity":0.4995614375,"poster_path":"/3a84UEOIJcwdEaSGaMTMC6h7g4K.jpg","production_companies":[{"name":"Sony Pictures Home Entertainment","id":5388}],"production_countries":[{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2011-10-11","revenue":0,"runtime":94,"spoken_languages":[{"iso_639_1":"en","name":"English"}],"status":"Released","tagline":"There's no greater battle... Than the battle for your life.","title":"Arena","vote_average":4.8,"vote_count":19,"trailers":{"quicktime":[],"youtube":[{"name":"Trailer Hd","size":"HD","source":"3rOBJZn4JFo","type":"Trailer"}]}},
 				update: function(data){
 					movie.data = data;
 					$rootScope.$broadcast('movie.update');
 				}
 				};
 	return movie;
+}]);
+
+module.factory('youtube', [function(){
+
 }]);

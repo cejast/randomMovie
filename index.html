@@ -3,7 +3,7 @@
 	<head>
 		<link href="style.css" rel="stylesheet">
 	</head>
-	<body ng-controller="RandomMovie" ng-init="initialize()" ng-style="getBackground(5);">
+	<body ng-controller="RandomMovie" ng-init="initialize()" ng-style="getBackground();">
 
 				<div class="header">
 						<h1 class="title">{{title}} ({{date[0]}})</h1>
@@ -14,8 +14,10 @@
 						<button class="go" ng-click="nextMovie()" style="width: 200px;">Go</button></br>
 					</div>
 					
-					<div class="result">			
-						<div id="youtube">youtube video</div>
+					<div class="result">	
+						<div id="youtube">
+							<div id="youtube_player"></div>
+						</div>
 						<p>{{overview}}</p>
 						<div id="genres"ng-repeat="value in movieResult.genres">
 								<span class="genre">{{value.name}}</span>
@@ -23,7 +25,7 @@
 					</div>
 
 					<div class="count">
-						<h1 class="title" style="text-align: center; color: #fff;">Movie #{{movieCount}}</h1>
+						<h1 style="text-align: center; color: #fff;">Movie #{{movieCount}}</h1>
 					</div>
 
 					<div class="gencol">
@@ -36,5 +38,6 @@
 		<script src="app/app.js"></script>
 		<script src="app/controller.js"></script>
 		<script src="app/service.js"></script>
+		<script src="app/youtube_service.js"></script>
 	</body>
 </html>
