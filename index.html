@@ -1,50 +1,40 @@
 <!doctype html>
 <html ng-app="randomMovie">
 	<head>
-		<!--scripts-->
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body ng-controller="RandomMovie" ng-init="initialize()" ng-style="getBackground(5);">
+
+				<div class="header">
+						<h1 class="title">{{title}} ({{date[0]}})</h1>
+				</div>
+
+				<div class="wrapper">
+					<div class="gobtn">
+						<button class="go" ng-click="nextMovie()" style="width: 200px;">Go</button></br>
+					</div>
+					
+					<div class="result">			
+						<div id="youtube">youtube video</div>
+						<p>{{overview}}</p>
+						<div id="genres"ng-repeat="value in movieResult.genres">
+								<span class="genre">{{value.name}}</span>
+						</div>
+					</div>
+
+					<div class="count">
+						<h1 class="title" style="text-align: center; color: #fff;">Movie #{{movieCount}}</h1>
+					</div>
+
+					<div class="gencol">
+						<span ng-repeat="genre in genres">
+							<button class="{{genre.class}}" ng-click="moveGenre(genre.id, genre.genre)">{{genre.genre}}</button>
+						</span>
+					</div>
+				</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 		<script src="app/app.js"></script>
 		<script src="app/controller.js"></script>
 		<script src="app/service.js"></script>
-		<!--styles-->
-		<link href="render/bootstrap/css/bootstrap.css" rel="stylesheet">
-		<link href="render/css/flat-ui.css" rel="stylesheet">
-		<link href="render/css/style.css" rel="stylesheet">
-	</head>
-	<body ng-controller="RandomMovie" ng-init="initialize()" ng-style="getBackground(5);">
-		<div class="container">
-			<div class="row">
-				<div class="control col-md-5">
-					<span ng-repeat="genre in genres">
-						<p class="{{genre.class}}" ng-click="moveGenre(genre.id, genre.genre)">{{genre.genre}}</p>
-					</span>
-				</div>
-
-				<div class="result col-md-7">
-					<div class="go row">
-						<input class="btn btn-primary" ng-click="randomGenre()" value="Go">
-					</div>
-
-					<div class="movieResult row">
-						<div class="resultLeft col-md-6">
-							<h1>{{title()}} ({{date[0]}})</h4>
-							<h2>{{tagline()}}</h6>
-							<p>{{overview()}}</p>
-						</div>
-
-						<div class="resultRight col-md-6">
-							<img src="{{poster()}}" style="margin-bottom: 10px;"/>
-							<span ng-repeat="value in movieResult.genres">
-								<p class="{{movieResultGenresClass(value.name)}}">{{value.name}}</p>
-							</span>
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
 	</body>
 </html>

@@ -1,3 +1,160 @@
-#container{ width: 900px; margin-left: auto; margin-right: auto;}
-#left{width:200px; float:left;}
-#right{width:500px; float:right; padding-top: 50px;}
+#youtube{
+	background: #fff;
+	width: 426px;
+	height: 240px;
+}
+
+p{
+	text-shadow:0px 1px 0px #154682;
+}
+
+.count{
+	position: absolute;
+	bottom: 1%;
+}
+
+.gobtn{
+	position: absolute;
+	right: 75px;
+	top: 47%;
+}
+
+.header {
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+	padding: 5px;
+	background: #131313;
+	color: white;
+	border-radius: 5px;
+	opacity: 0.9;
+	text-align: center;
+}
+
+.title{
+	padding: 0px;
+	margin: 0px 0px 0px;
+	font-family: arial;
+	text-shadow:0px 1px 0px #154682;
+}
+
+.result{
+	background: #131313;
+	opacity: 0.9;	
+	border-radius: 5px;
+	padding: 15px;
+	height: 100%;
+	width: 40%;
+	font-family: arial;
+	color: white;
+	float: left;
+}
+
+.gencol{
+	background: #131313;
+	opacity: 0.9;	
+	border-radius: 5px;
+	padding: 5px;
+	bottom: 1%;
+	right: 1%;
+	width: 25%;
+	position: absolute;
+	text-align: center;
+}
+
+#genres{
+	list-style-type: none;
+}
+
+.genre{
+  background: #e3e3e3;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+  box-shadow: inset 0 0 1px 1px #f6f6f6;
+  color: #333;
+  font: bold 11px/1 "helvetica neue", helvetica, arial, sans-serif;
+  padding: 4px;
+  text-align: center;
+  margin: 5px;
+  float:right;
+}
+
+button.unselected {
+  background: #e3e3e3;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+  box-shadow: inset 0 0 1px 1px #f6f6f6;
+  color: #333;
+  font: bold 11px/1 "helvetica neue", helvetica, arial, sans-serif;
+  padding: 4px;
+  text-align: center;
+}
+
+button.unselected:hover {
+    background: #d9d9d9;
+    -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+    box-shadow: inset 0 0 1px 1px #eaeaea;
+    color: #222;
+    cursor: pointer;
+}
+
+button.unselected:active {
+    background: #d0d0d0;
+    -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    box-shadow: inset 0 0 1px 1px #e3e3e3;
+    color: #000;
+}
+
+button.selected {
+  background: #333333;
+  border: 1px solid #1e1e1e;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 1px 1px #1e1e1e;
+  box-shadow: inset 0 0 1px 1px #1e1e1e;
+  color: #fff;
+  font: bold 11px/1 "helvetica neue", helvetica, arial, sans-serif;
+  padding: 4px;
+  text-align: center;
+}
+
+button.selected:hover {
+    background: #292929;
+    -webkit-box-shadow: inset 0 0 1px 1px #1e1e1e;
+    box-shadow: inset 0 0 1px 1px #1e1e1e;
+    color: #eee;
+    cursor: pointer;
+}
+
+button.selected:active {
+    background: #333333;
+    -webkit-box-shadow: inset 0 0 1px 1px #1e1e1e;
+    box-shadow: inset 0 0 1px 1px #1e1e1e;
+    color: #000;
+}
+
+button.go{
+  background: #e3e3e3;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+  box-shadow: inset 0 0 1px 1px #f6f6f6;
+  color: #333;
+  font: bold 24px/1 "helvetica neue", helvetica, arial, sans-serif;
+  padding: 10px 10px 10px;
+  text-align: center;	
+}
+
+button.go:hover{
+	background: #d9d9d9;
+    -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+    box-shadow: inset 0 0 1px 1px #eaeaea;
+    color: #222;
+    cursor: pointer;
+}
+
+button:focus{
+	outline: 0;
+}
