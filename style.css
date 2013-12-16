@@ -94,6 +94,7 @@ button.unselected {
   font: bold 11px/1 "helvetica neue", helvetica, arial, sans-serif;
   padding: 4px;
   text-align: center;
+  margin-bottom: 4px;
 }
 
 button.unselected:hover {
@@ -121,6 +122,7 @@ button.selected {
   font: bold 11px/1 "helvetica neue", helvetica, arial, sans-serif;
   padding: 4px;
   text-align: center;
+  margin-bottom: 4px;
 }
 
 button.selected:hover {

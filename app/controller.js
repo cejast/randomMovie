@@ -6,6 +6,7 @@ randomMovieController.controller('RandomMovie', function($scope, $http, api, gen
 	$scope.movieCount = 1;
 	$scope.youtubeID = $scope.movieResult.trailers.youtube[0].source;
 
+
 	$scope.initialize = function(){
 				apiCall.getGenres();
 				apiCall.getConfiguration().then(function(data){ 
@@ -68,6 +69,8 @@ randomMovieController.controller('RandomMovie', function($scope, $http, api, gen
   			   };
 		}
 
+	$scope.videoExist = true;
+
 	$scope.$watch('movieResult', function(){
 		$scope.title = $scope.movieResult.title;
 		$scope.date = $scope.movieResult.release_date.split("-", 1);
@@ -79,8 +82,15 @@ randomMovieController.controller('RandomMovie', function($scope, $http, api, gen
 			}
 		$scope.poster = $scope.configuration.images.base_url + 'w185' + $scope.movieResult.poster_path;
 		$scope.background = $scope.configuration.images.base_url + 'w780' + $scope.movieResult.backdrop_path;
-		$scope.youtubeID = $scope.movieResult.trailers.youtube[0].source;
-		youtubePlayerApi.setVideo($scope.youtubeID);
+		if(!angular.isDefined($scope.movieResult.trailers.youtube[0]) || $scope.movieResult.trailers.youtube[0] === null){
+			console.log("no video available");
+			$scope.videoExist = false;
+		}
+		else{
+			$scope.youtubeID = $scope.movieResult.trailers.youtube[0].source;
+			youtubePlayerApi.setVideo($scope.youtubeID);
+			$scope.videoExist = true;
+		}
 	});
 
 	$scope.$on('movie.update', function(event){
