@@ -93,7 +93,8 @@ randomMovieController.controller('RandomMovie', function($scope, $http, api, gen
 		}
 	});
 
-	$scope.$on('movie.update', function(event){
+	$scope.movieInfo = movieInfo;
+	$scope.$watch('movieInfo.data', function(){
 		$scope.movieResult = movieInfo.data;
 	})
 

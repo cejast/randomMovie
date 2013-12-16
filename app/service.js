@@ -131,12 +131,7 @@ module.factory('movieInfo', [ '$rootScope', function($rootScope){
 	var movie = { data: {"adult":false,"backdrop_path":"/qbwVJPmEZS4c4t4Xgn0ZNqSDFzc.jpg","belongs_to_collection":null,"budget":10000000,"genres":[{"id":28,"name":"Action"},{"id":878,"name":"Science Fiction"},{"id":53,"name":"Thriller"},{"id":10769,"name":"Foreign"}],"homepage":"","id":71254,"imdb_id":"tt1117581","original_title":"Arena","overview":"David Lord finds himself forced into the savage world of a modern gladiatorial arena, where men fight to the death for the entertainment of the online masses.","popularity":0.4995614375,"poster_path":"/3a84UEOIJcwdEaSGaMTMC6h7g4K.jpg","production_companies":[{"name":"Sony Pictures Home Entertainment","id":5388}],"production_countries":[{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2011-10-11","revenue":0,"runtime":94,"spoken_languages":[{"iso_639_1":"en","name":"English"}],"status":"Released","tagline":"There's no greater battle... Than the battle for your life.","title":"Arena","vote_average":4.8,"vote_count":19,"trailers":{"quicktime":[],"youtube":[{"name":"Trailer Hd","size":"HD","source":"3rOBJZn4JFo","type":"Trailer"}]}},
 				update: function(data){
 					movie.data = data;
-					$rootScope.$broadcast('movie.update');
 				}
 				};
 	return movie;
-}]);
-
-module.factory('youtube', [function(){
-
 }]);
