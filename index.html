@@ -16,7 +16,7 @@
 					
 					<div class="result">	
 						<div id="youtube" ng-show="videoExist">
-							<div id="youtube_player"></div>
+							<youtube id="{{youtubeID}}" width="426" height="240"></youtube>
 						</div>
 						<p>{{overview}}</p>
 						<div id="genres"ng-repeat="value in movieResult.genres">
@@ -38,6 +38,6 @@
 		<script src="app/app.js"></script>
 		<script src="app/controller.js"></script>
 		<script src="app/service.js"></script>
-		<script src="app/youtube_service.js"></script>
+		<script src="app/youtube.js"></script>
 	</body>
 </html>

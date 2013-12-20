@@ -1,6 +1,6 @@
-var randomMovieController = angular.module('randomMovieController', ['randomMovieService', 'youtubeService']);
+var randomMovieController = angular.module('randomMovieController', ['randomMovieService']);
 
-randomMovieController.controller('RandomMovie', function($scope, $http, api, genres, movieInfo, apiCall, functions, youtubePlayerApi){
+randomMovieController.controller('RandomMovie', function($scope, $http, api, genres, movieInfo, apiCall, functions){
 
 	$scope.movieResult = movieInfo.data;
 	$scope.movieCount = 1;
@@ -88,7 +88,6 @@ randomMovieController.controller('RandomMovie', function($scope, $http, api, gen
 		}
 		else{
 			$scope.youtubeID = $scope.movieResult.trailers.youtube[0].source;
-			youtubePlayerApi.setVideo($scope.youtubeID);
 			$scope.videoExist = true;
 		}
 	});
