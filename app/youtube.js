@@ -42,7 +42,6 @@ youtube.directive('youtube', ['youtubeEmbed', '$window', function(youtubeEmbed, 
 
 					scope.$watch(function(){ return attrs.id;}, function(newVal){
 						var videoId = newVal;
-						console.log(videoId);
 						scope.player = scope.createPlayer(attrs);
 					});
 

@@ -69,6 +69,11 @@ randomMovieController.controller('RandomMovie', function($scope, $http, api, gen
   			   };
 		}
 
+	$scope.gensel = function(){
+		if($scope.selectedGenres.length > 0) return true;
+		else return false;
+	}
+
 	$scope.videoExist = true;
 
 	$scope.$watch('movieResult', function(){

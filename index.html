@@ -10,8 +10,8 @@
 				</div>
 
 				<div class="wrapper">
-					<div class="gobtn">
-						<button class="go" ng-click="nextMovie()" style="width: 200px;">Go</button></br>
+					<div class="gobtn" ng-show="gensel()">
+						<button class="go" ng-click="nextMovie()" style="width: 200px;">Go</button><br>
 					</div>
 					
 					<div class="result">	
@@ -29,6 +29,7 @@
 					</div>
 
 					<div class="gencol">
+						<p>Select your genres then press Go</p>
 						<span ng-repeat="genre in genres">
 							<button class="{{genre.class}}" ng-click="moveGenre(genre.id, genre.genre)">{{genre.genre}}</button>
 						</span>

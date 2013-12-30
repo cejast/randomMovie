@@ -64,6 +64,8 @@ p{
 	width: 25%;
 	position: absolute;
 	text-align: center;
+  font-family: arial;
+  color: white;
 }
 
 #genres{
